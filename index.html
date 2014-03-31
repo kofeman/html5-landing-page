@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html5 landing page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="flex-grid">
+    <h1 class="flex-col col-6 logo"><a href="index.html">html5 landing page</a></h1>
+    <div class="flex-col col-6 mail"><p>my email:</p><p class="mymail">nickolay-starikov@ya.ru</p></div>
+</header>
+<section class="flex-grid form-container">
+    <div class="flex-col col-7">
+        <h2>html5 form</h2>
+        <p>Проверка заполнения полей формы производится с помощью html5 атрибутов <a href="http://htmlbook.ru/html/input/pattern">pattern</a> и <a
+                href="http://htmlbook.ru/html/input/required">required</a></p>
+        <p>Работает в последних версиях всех современных браузеров</p>
+    </div>
+    <div class="flex-col col-5">
+        <h3>form</h3>
+        <form action="send.php" method="post">
+            <input type="text" name="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё\s]{2,30}" required="" title="например, Иванов Иван">
+            <input type="text" name="phone" placeholder="Телефон" pattern="^([+]+)*[0-9\s-]{5,20}" required="" title="например, +38099-88-000-99">
+            <input type="email" name="email" placeholder="E-mail" required="">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</section>
+<div class="flex-grid"><h2 class="flex-col col-12">modal window for landing page</h2></div>
+<section class="flex-grid columns modal-window">
+    <article class="flex-col col-4">
+        <h3>Модальное окно</h3>
+        <p>Скрипт модального окна написан на js. Само окно скрыто с помощью display='none' в таблице стилей. При клике на кнопку окно открывается. При нажатии на темный фон или кнопку "закрыть" закрывается. Для всех перечисленных событий кликов соответственно написаны обработчики событий в js-файле.</p>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <button class="popup-link modal-form-button"
+                data-href="popup"
+                data-formId="form1"
+                data-inputName="product"
+                data-value="button 1">button 1</button>
+    </article>
+    <article class="flex-col col-4">
+        <h3>Особенность окна</h3>
+        <p>"Фишка" скрипта в том, что он добавляет скрытое инпут-поле к форме, которая появляется в модальном окне. В landing page часто встречается перечень каких-то продуктов, которые может заказать пользователь. И для заказа отправляется форма обратной связи. Поэтому удобно, когда сразу на почту приходит название того, товара, который пользователь хотел заказать. </p>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <button class="popup-link modal-form-button"
+                data-href="popup"
+                data-formId="form1"
+                data-inputName="product"
+                data-value="button2">product 2</button>
+    </article>
+    <article class="flex-col col-4">
+        <h3>Как работает </h3>
+        <p>Чтобы модальное окно работало, нужно кнопке прописать класс "popup-link" и атрибут "data-href" со ссылкой на id окна.
+            <br/> А для того, чтобы срипт подставлял скрытое поле в форму в модальном окне, кнопке прописываются атрибуты data-formId (id формы),
+            data-inputName (name скрытого поля), data-value (значение скрытого поля)</p>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <button class="popup-link modal-form-button"
+                data-href="popup"
+                data-formId="form1"
+                data-inputName="product"
+                data-value="3">product 3</button>
+    </article>
+</section>
+<section class="flex-grid">
+    <div class="flex-col6 flex-col">
+        <h2 class="slider-title">css3 slider</h2>
+        <div class="slider">
+
+            <input id="slider1" type="radio" name="slider" checked />
+            <input id="slider2" type="radio" name="slider"/>
+            <input id="slider3" type="radio" name="slider"/>
+            <input id="slider4" type="radio" name="slider"/>
+            <input id="slider5" type="radio" name="slider"/>
+            <input id="slider6" type="radio" name="slider"/>
+
+            <div class="slides">
+                <div><img src="http://lorempixel.com/g/400/200/" alt=""/></div>
+                <div><img src="http://lorempixel.com/g/400/200/sports" alt=""/></div>
+                <div><img src="http://lorempixel.com/400/200/" alt=""/></div>
+                <div><img src="http://lorempixel.com/g/400/200/sports/dummy-text" alt=""/></div>
+                <div><img src="http://lorempixel.com/400/200/sports" alt=""/></div>
+                <div><img src="http://lorempixel.com/400/200/sports/dummy-text" alt=""/></div>
+            </div>
+
+            <div class="controls">
+                <label for="slider1"></label>
+                <label for="slider2"></label>
+                <label for="slider3"></label>
+                <label for="slider4"></label>
+                <label for="slider5"></label>
+                <label for="slider6"></label>
+            </div>
+
+            <div class="side-controls">
+                <label for="slider1"></label>
+                <label for="slider2"></label>
+                <label for="slider3"></label>
+                <label for="slider4"></label>
+                <label for="slider5"></label>
+                <label for="slider6"></label>
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="flex-grid"><h2 class="flex-col col-12">responsive 12-col flex grid</h2></div>
+    <section class="flex-grid columns">
+    <article class="flex-col col-3">
+        <h3>title 1</h3>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </article>
+    <article class="flex-col col-3">
+        <h3>title 2</h3>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </article>
+    <article class="flex-col col-3">
+        <h3>title 3</h3>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </article>
+    <article class="flex-col col-3">
+        <h3>title 4</h3>
+        <img src="http://lorempixel.com/400/200/sports/" alt=""/>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+    </article>
+</section>
+<div class="flex-grid"><h2 class="flex-col col-12">css3 tabs</h2></div>
+<section class="flex-grid">
+    <div class="flex-col col-12">
+        <div class="html5tabs">
+            <input id="tab1" type="radio" name="tab" checked /><label for="tab1">Табы</label>
+            <input id="tab2" type="radio" name="tab"/><label for="tab2">Слайдер</label>
+            <input id="tab3" type="radio" name="tab"/><label for="tab3">Сетка</label>
+
+            <div class="tabs">
+                <div>
+                    <h2>css3 вкладки</h2>
+
+                    <p>Вкладки сделаны на чистом css. Для переключения используются скрытые радио-баттоны. Кнопки чуть выше это теги label, связанные с этими радио-баттонами. Блоки с текстом сделаны абсолютным позиционированием и с помощью opacity. </p>
+                </div>
+                <div>
+                    <h2>css3 слайдер</h2>
+
+                    <p>Слайдер сделан по тому же принципу, что и вкладки. С помощью радио-баттонов происходит переключение слайдов, а с помощью transition происходит небольшой плавный переход от одной фотки к другой.  </p>
+                </div>
+                <div>
+                    <h2>flex responsive сетка</h2>
+
+                    <p>Сетка страницы сочетает в себе две технологии, display: flex и responsive web design. Выравнивание блоков по центру при изменении разрешения экрана очень удобно организовать с помощью flexbox. А для создания адаптивных макетов на основе 12-колоночной сетки используются css-классы с определенной процентной шириной. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="flex-grid">
+    <p class="logo flex-col col-3"><a href="index.html">html5-landing-page</a></p>
+    <p class="copyrights flex-col col-3"><a href="http://vk.com/nikolay_star">nikolay starikov</a></p>
+</footer>
+<div class="popup" id="popup">
+    <div>
+        <form  id="form1">
+            <h3>modal form</h3>
+            <input type="text" name="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё\s]{2,30}" required="" title="например, Иванов Иван">
+            <input type="text" name="phone" placeholder="Телефон" pattern="^([+]+)*[0-9\s-]{5,20}" required="" title="например, +38099-88-000-99">
+            <input type="email" name="email" placeholder="E-mail" required="">
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<script src="landingModal.js"></script>
+</body>
+</html>
