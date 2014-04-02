@@ -1,11 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing : border-box;
     box-sizing: border-box;
 }
 
 body{
-    max-width: 960px;
+    max-width: 1000px;
     min-width: 420px;
     margin: auto;
 }
@@ -24,6 +26,7 @@ flex responsive grid
     display: -webkit-flex;
     display: flex;
     justify-content: center;
+    -ms-flex-pack: center; /*ie-10*/
     align-content: stretch;
     max-width: 1000px;
     min-width: 320px;
@@ -96,7 +99,7 @@ flex responsive grid
     }
 }
 
-@media all and (max-width: 560px) {
+@media all and (max-width: 480px) {
     .flex-grid{
         flex-direction: column;
     }
@@ -162,7 +165,7 @@ section>article{
     background: #fff;
 }
 
-section>h2,
+section h2,
 section h3 {
    font-weight: normal;
     line-height: 2em;
