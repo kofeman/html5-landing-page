@@ -8,7 +8,7 @@
 
 body{
     max-width: 1000px;
-    min-width: 420px;
+    min-width: 480px;
     margin: auto;
 }
 
@@ -29,7 +29,7 @@ flex responsive grid
     -ms-flex-pack: center; /*ie-10*/
     align-content: stretch;
     max-width: 1000px;
-    min-width: 320px;
+    min-width: 480px;
     -webkit-flex-flow: row wrap;
     -moz-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
@@ -99,7 +99,7 @@ flex responsive grid
     }
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 540px) {
     .flex-grid{
         flex-direction: column;
     }
@@ -212,7 +212,7 @@ css3 tabs
 
 .tabs{
     position: relative;
-    min-width: 400px;
+    min-width: 480px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -276,6 +276,15 @@ css3 tabs
 css3 slider
 */
 
+.slider{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+}
+
 .slider > input{
     display: none;
 }
@@ -284,6 +293,7 @@ css3 slider
     position: relative;
     width: 400px;
     height: 200px;
+    border: 1px solid #444;
 }
 
 .slides > div{
@@ -293,73 +303,16 @@ css3 slider
     top: 0;
     left: 0;
     width: 100%;
-    transition: all 0.8s linear;
+    transition: all 0.6s;
 }
 
-#slider1:checked ~ .slides > div:nth-of-type(1),
-#slider2:checked ~ .slides > div:nth-of-type(2),
-#slider3:checked ~ .slides > div:nth-of-type(3),
-#slider4:checked ~ .slides > div:nth-of-type(4),
-#slider5:checked ~ .slides > div:nth-of-type(5),
-#slider6:checked ~ .slides > div:nth-of-type(6){
-    position: relative;
-    opacity: 1;
-    z-index: 1;
-    transition-delay:  0.3s;
+.slides > div > img{
+    max-width: 100%;
 }
 
-.side-controls label{
-    position: absolute;
-    display: block;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    top: 50%;
-    margin-top: -50px;
-    cursor: pointer;
-    transition: opacity .7s;
-    opacity: .2;
-}
-
-#slider1:checked ~ .side-controls label:nth-of-type(6),
-#slider2:checked ~ .side-controls label:nth-of-type(1),
-#slider3:checked ~ .side-controls label:nth-of-type(2),
-#slider4:checked ~ .side-controls label:nth-of-type(3),
-#slider5:checked ~ .side-controls label:nth-of-type(4),
-#slider6:checked ~ .side-controls label:nth-of-type(5) {
-    border-right: 40px solid #333;
-    left: -40px;
-}
-
-#slider1:checked ~ .side-controls label:nth-of-type(2),
-#slider2:checked ~ .side-controls label:nth-of-type(3),
-#slider3:checked ~ .side-controls label:nth-of-type(4),
-#slider4:checked ~ .side-controls label:nth-of-type(5),
-#slider5:checked ~ .side-controls label:nth-of-type(6),
-#slider6:checked ~ .side-controls label:nth-of-type(1) {
-    border-left: 40px solid #333;
-    right: -40px;
-}
-
-#slider1:checked ~ .side-controls label:nth-of-type(1),
-#slider2:checked ~ .side-controls label:nth-of-type(2),
-#slider3:checked ~ .side-controls label:nth-of-type(3),
-#slider4:checked ~ .side-controls label:nth-of-type(4),
-#slider5:checked ~ .side-controls label:nth-of-type(5),
-#slider6:checked ~ .side-controls label:nth-of-type(6),
-.side-controls label:hover {
-    opacity: 0.8;
-}
-
-
-.slider{
-    max-width: 400px;
-    margin: auto;
-    position: relative;
-}
-
-h2.slider-title{
-    line-height: 3em;
-}
+/*
+controls
+*/
 
 .controls{
     text-align: center;
@@ -368,22 +321,43 @@ h2.slider-title{
 .controls > label{
     display: inline-block;
     cursor: pointer;
-    margin: 10px 8px;
-    width: 30px;
-    height: 13px;
+    margin: 10px 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
     background: #ccc;
     transition: background 0.5s;
 }
 
-#slider1:checked ~ .controls label:nth-of-type(1),
-#slider2:checked ~ .controls label:nth-of-type(2),
-#slider3:checked ~ .controls label:nth-of-type(3),
-#slider4:checked ~ .controls label:nth-of-type(4),
-#slider5:checked ~ .controls label:nth-of-type(5),
-#slider6:checked ~ .controls label:nth-of-type(6),
 .controls label:hover {
     background: #333;
 }
+
+/*
+side controls
+*/
+
+.side-controls label{
+    position: absolute;
+    display: block;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    top: 50%;
+    margin-top: -40px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    opacity: .2;
+    z-index: 20;
+}
+
+.side-controls label:hover {
+    opacity: 0.8;
+}
+
+/*
+Для изменения стилей правой и левой кнопки и выбранного элемента в controls, нужно изменить соответствующие стили в js файле.
+Стили там отмечены комментариями
+*/
 
 /*
 modal window
