@@ -22,7 +22,7 @@ $msg .= "<p><strong>Заказ:</strong> ".$product."</p>\r\n";
 $msg .= "</body></html>";
 
 // отправка сообщения
-@mail($sendto, $subject, $msg, $headers)) {
+if(@mail($sendto, $subject, $msg, $headers)) {
 	echo "true";
 } else {
 	echo "false";
